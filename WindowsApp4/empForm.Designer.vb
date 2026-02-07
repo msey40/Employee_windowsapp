@@ -53,6 +53,7 @@ Partial Class empForm
         Me.create_at = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtPosition = New System.Windows.Forms.TextBox()
         Me.lblPosition = New System.Windows.Forms.Label()
+        Me.lblwarning = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEmp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,10 +62,9 @@ Partial Class empForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(415, 11)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(311, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(341, 36)
+        Me.Label1.Size = New System.Drawing.Size(263, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Employee Menagement"
         '
@@ -72,10 +72,9 @@ Partial Class empForm
         '
         Me.lblstID.AutoSize = True
         Me.lblstID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblstID.Location = New System.Drawing.Point(35, 82)
-        Me.lblstID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblstID.Location = New System.Drawing.Point(26, 67)
         Me.lblstID.Name = "lblstID"
-        Me.lblstID.Size = New System.Drawing.Size(104, 20)
+        Me.lblstID.Size = New System.Drawing.Size(85, 16)
         Me.lblstID.TabIndex = 1
         Me.lblstID.Text = "Employee ID"
         '
@@ -83,10 +82,9 @@ Partial Class empForm
         '
         Me.lblstName.AutoSize = True
         Me.lblstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblstName.Location = New System.Drawing.Point(49, 130)
-        Me.lblstName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblstName.Location = New System.Drawing.Point(37, 106)
         Me.lblstName.Name = "lblstName"
-        Me.lblstName.Size = New System.Drawing.Size(85, 20)
+        Me.lblstName.Size = New System.Drawing.Size(68, 16)
         Me.lblstName.TabIndex = 2
         Me.lblstName.Text = "Full Name"
         '
@@ -94,10 +92,9 @@ Partial Class empForm
         '
         Me.lblGen.AutoSize = True
         Me.lblGen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGen.Location = New System.Drawing.Point(696, 229)
-        Me.lblGen.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblGen.Location = New System.Drawing.Point(522, 186)
         Me.lblGen.Name = "lblGen"
-        Me.lblGen.Size = New System.Drawing.Size(64, 20)
+        Me.lblGen.Size = New System.Drawing.Size(52, 16)
         Me.lblGen.TabIndex = 3
         Me.lblGen.Text = "Gender"
         '
@@ -105,10 +102,9 @@ Partial Class empForm
         '
         Me.lblstPh.AutoSize = True
         Me.lblstPh.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblstPh.Location = New System.Drawing.Point(79, 180)
-        Me.lblstPh.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblstPh.Location = New System.Drawing.Point(59, 146)
         Me.lblstPh.Name = "lblstPh"
-        Me.lblstPh.Size = New System.Drawing.Size(56, 20)
+        Me.lblstPh.Size = New System.Drawing.Size(46, 16)
         Me.lblstPh.TabIndex = 4
         Me.lblstPh.Text = "Phone"
         '
@@ -116,43 +112,38 @@ Partial Class empForm
         '
         Me.lblDob.AutoSize = True
         Me.lblDob.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDob.Location = New System.Drawing.Point(656, 180)
-        Me.lblDob.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDob.Location = New System.Drawing.Point(492, 146)
         Me.lblDob.Name = "lblDob"
-        Me.lblDob.Size = New System.Drawing.Size(110, 20)
+        Me.lblDob.Size = New System.Drawing.Size(82, 16)
         Me.lblDob.TabIndex = 5
         Me.lblDob.Text = "Birth of Date "
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(169, 82)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtID.Location = New System.Drawing.Point(127, 67)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(332, 22)
+        Me.txtID.Size = New System.Drawing.Size(250, 20)
         Me.txtID.TabIndex = 6
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(169, 129)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtName.Location = New System.Drawing.Point(127, 105)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(332, 22)
+        Me.txtName.Size = New System.Drawing.Size(250, 20)
         Me.txtName.TabIndex = 7
         '
         'txtPh
         '
-        Me.txtPh.Location = New System.Drawing.Point(169, 180)
-        Me.txtPh.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPh.Location = New System.Drawing.Point(127, 146)
         Me.txtPh.Name = "txtPh"
-        Me.txtPh.Size = New System.Drawing.Size(332, 22)
+        Me.txtPh.Size = New System.Drawing.Size(250, 20)
         Me.txtPh.TabIndex = 8
         '
         'dtpDob
         '
-        Me.dtpDob.Location = New System.Drawing.Point(771, 175)
-        Me.dtpDob.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpDob.Location = New System.Drawing.Point(578, 146)
         Me.dtpDob.Name = "dtpDob"
-        Me.dtpDob.Size = New System.Drawing.Size(332, 22)
+        Me.dtpDob.Size = New System.Drawing.Size(250, 20)
         Me.dtpDob.TabIndex = 9
         '
         'Panel1
@@ -162,29 +153,26 @@ Partial Class empForm
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1179, 54)
+        Me.Panel1.Size = New System.Drawing.Size(884, 44)
         Me.Panel1.TabIndex = 12
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(1135, 11)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(851, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 36)
+        Me.Label4.Size = New System.Drawing.Size(27, 28)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "X"
         '
         'btnClear
         '
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(55, 271)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Location = New System.Drawing.Point(41, 220)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(121, 41)
+        Me.btnClear.Size = New System.Drawing.Size(91, 33)
         Me.btnClear.TabIndex = 13
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
@@ -192,10 +180,9 @@ Partial Class empForm
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(611, 271)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Location = New System.Drawing.Point(458, 220)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(121, 41)
+        Me.btnDelete.Size = New System.Drawing.Size(91, 33)
         Me.btnDelete.TabIndex = 14
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -203,10 +190,9 @@ Partial Class empForm
         'btnEdit
         '
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(807, 271)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEdit.Location = New System.Drawing.Point(605, 220)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(121, 41)
+        Me.btnEdit.Size = New System.Drawing.Size(91, 33)
         Me.btnEdit.TabIndex = 15
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -215,10 +201,9 @@ Partial Class empForm
         '
         Me.btnAdd.BackColor = System.Drawing.Color.Silver
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(995, 271)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Location = New System.Drawing.Point(746, 220)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(121, 41)
+        Me.btnAdd.Size = New System.Drawing.Size(91, 33)
         Me.btnAdd.TabIndex = 16
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -226,10 +211,9 @@ Partial Class empForm
         'rdoMale
         '
         Me.rdoMale.AutoSize = True
-        Me.rdoMale.Location = New System.Drawing.Point(812, 228)
-        Me.rdoMale.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rdoMale.Location = New System.Drawing.Point(609, 185)
         Me.rdoMale.Name = "rdoMale"
-        Me.rdoMale.Size = New System.Drawing.Size(58, 20)
+        Me.rdoMale.Size = New System.Drawing.Size(48, 17)
         Me.rdoMale.TabIndex = 17
         Me.rdoMale.TabStop = True
         Me.rdoMale.Text = "Male"
@@ -238,10 +222,9 @@ Partial Class empForm
         'rdoFemale
         '
         Me.rdoFemale.AutoSize = True
-        Me.rdoFemale.Location = New System.Drawing.Point(917, 228)
-        Me.rdoFemale.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rdoFemale.Location = New System.Drawing.Point(688, 185)
         Me.rdoFemale.Name = "rdoFemale"
-        Me.rdoFemale.Size = New System.Drawing.Size(74, 20)
+        Me.rdoFemale.Size = New System.Drawing.Size(59, 17)
         Me.rdoFemale.TabIndex = 18
         Me.rdoFemale.TabStop = True
         Me.rdoFemale.Text = "Female"
@@ -249,20 +232,18 @@ Partial Class empForm
         '
         'txtSa
         '
-        Me.txtSa.Location = New System.Drawing.Point(771, 129)
-        Me.txtSa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSa.Location = New System.Drawing.Point(578, 105)
         Me.txtSa.Name = "txtSa"
-        Me.txtSa.Size = New System.Drawing.Size(332, 22)
+        Me.txtSa.Size = New System.Drawing.Size(250, 20)
         Me.txtSa.TabIndex = 20
         '
         'lblSa
         '
         Me.lblSa.AutoSize = True
         Me.lblSa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSa.Location = New System.Drawing.Point(701, 129)
-        Me.lblSa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSa.Location = New System.Drawing.Point(526, 105)
         Me.lblSa.Name = "lblSa"
-        Me.lblSa.Size = New System.Drawing.Size(56, 20)
+        Me.lblSa.Size = New System.Drawing.Size(46, 16)
         Me.lblSa.TabIndex = 19
         Me.lblSa.Text = "Salary"
         '
@@ -272,13 +253,12 @@ Partial Class empForm
         Me.dgvEmp.AllowUserToDeleteRows = False
         Me.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.no, Me.emp_name, Me.emp_position, Me.salary, Me.emp_dob, Me.emp_gender, Me.emp_phone, Me.create_at})
-        Me.dgvEmp.Location = New System.Drawing.Point(0, 338)
-        Me.dgvEmp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvEmp.Location = New System.Drawing.Point(0, 275)
         Me.dgvEmp.Name = "dgvEmp"
         Me.dgvEmp.ReadOnly = True
         Me.dgvEmp.RowHeadersVisible = False
         Me.dgvEmp.RowHeadersWidth = 51
-        Me.dgvEmp.Size = New System.Drawing.Size(1179, 314)
+        Me.dgvEmp.Size = New System.Drawing.Size(884, 255)
         Me.dgvEmp.TabIndex = 21
         '
         'no
@@ -347,29 +327,39 @@ Partial Class empForm
         '
         'txtPosition
         '
-        Me.txtPosition.Location = New System.Drawing.Point(771, 82)
-        Me.txtPosition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPosition.Location = New System.Drawing.Point(578, 67)
         Me.txtPosition.Name = "txtPosition"
-        Me.txtPosition.Size = New System.Drawing.Size(332, 22)
+        Me.txtPosition.Size = New System.Drawing.Size(250, 20)
         Me.txtPosition.TabIndex = 23
         '
         'lblPosition
         '
         Me.lblPosition.AutoSize = True
         Me.lblPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPosition.Location = New System.Drawing.Point(689, 84)
-        Me.lblPosition.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPosition.Location = New System.Drawing.Point(517, 68)
         Me.lblPosition.Name = "lblPosition"
-        Me.lblPosition.Size = New System.Drawing.Size(69, 20)
+        Me.lblPosition.Size = New System.Drawing.Size(55, 16)
         Me.lblPosition.TabIndex = 22
         Me.lblPosition.Text = "Position"
         '
+        'lblwarning
+        '
+        Me.lblwarning.AutoSize = True
+        Me.lblwarning.Font = New System.Drawing.Font("Microsoft JhengHei UI", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblwarning.ForeColor = System.Drawing.Color.Red
+        Me.lblwarning.Location = New System.Drawing.Point(127, 48)
+        Me.lblwarning.Name = "lblwarning"
+        Me.lblwarning.Size = New System.Drawing.Size(151, 12)
+        Me.lblwarning.TabIndex = 24
+        Me.lblwarning.Text = "Add new employee leave ID empty"
+        '
         'empForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1179, 652)
+        Me.ClientSize = New System.Drawing.Size(884, 530)
+        Me.Controls.Add(Me.lblwarning)
         Me.Controls.Add(Me.txtPosition)
         Me.Controls.Add(Me.lblPosition)
         Me.Controls.Add(Me.dgvEmp)
@@ -392,7 +382,6 @@ Partial Class empForm
         Me.Controls.Add(Me.lblstName)
         Me.Controls.Add(Me.lblstID)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "empForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Menagement"
@@ -435,4 +424,5 @@ Partial Class empForm
     Friend WithEvents emp_gender As DataGridViewTextBoxColumn
     Friend WithEvents emp_phone As DataGridViewTextBoxColumn
     Friend WithEvents create_at As DataGridViewTextBoxColumn
+    Friend WithEvents lblwarning As Label
 End Class

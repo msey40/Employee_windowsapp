@@ -4,6 +4,7 @@ Imports Mysqlx.XDevAPI.Common
 Public Class dashboard
     Private Sub dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         getDBConnection()
+
     End Sub
 
     Private Sub dashboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing

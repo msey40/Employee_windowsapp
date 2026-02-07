@@ -2,7 +2,6 @@
 Public Class empForm
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
         Me.Close()
-
     End Sub
     Sub loadEmpData()
         dgvEmp.Rows.Clear()
@@ -46,10 +45,6 @@ Public Class empForm
         rdoFemale.Checked = False
         dtpDob.Value = Date.Today
     End Sub
-
-
-
-
     Private Sub empForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadEmpData()
     End Sub
@@ -100,7 +95,6 @@ Public Class empForm
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ClearInputs()
     End Sub
-
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         ' Validation
         If String.IsNullOrEmpty(txtID.Text) Or String.IsNullOrEmpty(txtName.Text) Then
@@ -172,8 +166,35 @@ Public Class empForm
             End If
         End If
     End Sub
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
-    Private Sub rdoMen_CheckedChanged(sender As Object, e As EventArgs) Handles rdoMale.CheckedChanged
+        If String.IsNullOrEmpty(txtID.Text) Then
+            MsgBox("Please select an employee to delete.", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
 
+        ' 2️⃣ Confirm with the user
+        If MessageBox.Show("Are you sure you want to delete this employee?", "Confirm Delete",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Try
+                Using conn As MySqlConnection = getDBConnection()
+                    conn.Open()
+
+                    Dim deleteQuery As String = "DELETE FROM tblemployee WHERE emp_id=@id"
+                    Using cmd As New MySqlCommand(deleteQuery, conn)
+                        cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtID.Text))
+                        cmd.ExecuteNonQuery()
+                    End Using
+                End Using
+
+                ' 3️⃣ Refresh the grid and clear form
+                MsgBox("Employee deleted successfully!", MsgBoxStyle.Information)
+                loadEmpData()
+                ClearInputs()
+
+            Catch ex As Exception
+                MsgBox("Error deleting employee: " & ex.Message, MsgBoxStyle.Critical)
+            End Try
+        End If
     End Sub
 End Class
