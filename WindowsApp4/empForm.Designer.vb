@@ -38,13 +38,11 @@ Partial Class empForm
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.rdoMen = New System.Windows.Forms.RadioButton()
-        Me.rdoWomen = New System.Windows.Forms.RadioButton()
+        Me.rdoMale = New System.Windows.Forms.RadioButton()
+        Me.rdoFemale = New System.Windows.Forms.RadioButton()
         Me.txtSa = New System.Windows.Forms.TextBox()
         Me.lblSa = New System.Windows.Forms.Label()
         Me.dgvEmp = New System.Windows.Forms.DataGridView()
-        Me.txtPosition = New System.Windows.Forms.TextBox()
-        Me.lblPosition = New System.Windows.Forms.Label()
         Me.no = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.emp_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.emp_position = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +51,8 @@ Partial Class empForm
         Me.emp_gender = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.emp_phone = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.create_at = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtPosition = New System.Windows.Forms.TextBox()
+        Me.lblPosition = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEmp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,9 +61,10 @@ Partial Class empForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(311, 9)
+        Me.Label1.Location = New System.Drawing.Point(415, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(263, 28)
+        Me.Label1.Size = New System.Drawing.Size(341, 36)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Employee Menagement"
         '
@@ -71,9 +72,10 @@ Partial Class empForm
         '
         Me.lblstID.AutoSize = True
         Me.lblstID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblstID.Location = New System.Drawing.Point(26, 67)
+        Me.lblstID.Location = New System.Drawing.Point(35, 82)
+        Me.lblstID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblstID.Name = "lblstID"
-        Me.lblstID.Size = New System.Drawing.Size(85, 16)
+        Me.lblstID.Size = New System.Drawing.Size(104, 20)
         Me.lblstID.TabIndex = 1
         Me.lblstID.Text = "Employee ID"
         '
@@ -81,9 +83,10 @@ Partial Class empForm
         '
         Me.lblstName.AutoSize = True
         Me.lblstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblstName.Location = New System.Drawing.Point(37, 106)
+        Me.lblstName.Location = New System.Drawing.Point(49, 130)
+        Me.lblstName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblstName.Name = "lblstName"
-        Me.lblstName.Size = New System.Drawing.Size(68, 16)
+        Me.lblstName.Size = New System.Drawing.Size(85, 20)
         Me.lblstName.TabIndex = 2
         Me.lblstName.Text = "Full Name"
         '
@@ -91,9 +94,10 @@ Partial Class empForm
         '
         Me.lblGen.AutoSize = True
         Me.lblGen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGen.Location = New System.Drawing.Point(522, 186)
+        Me.lblGen.Location = New System.Drawing.Point(696, 229)
+        Me.lblGen.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblGen.Name = "lblGen"
-        Me.lblGen.Size = New System.Drawing.Size(52, 16)
+        Me.lblGen.Size = New System.Drawing.Size(64, 20)
         Me.lblGen.TabIndex = 3
         Me.lblGen.Text = "Gender"
         '
@@ -101,9 +105,10 @@ Partial Class empForm
         '
         Me.lblstPh.AutoSize = True
         Me.lblstPh.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblstPh.Location = New System.Drawing.Point(59, 146)
+        Me.lblstPh.Location = New System.Drawing.Point(79, 180)
+        Me.lblstPh.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblstPh.Name = "lblstPh"
-        Me.lblstPh.Size = New System.Drawing.Size(46, 16)
+        Me.lblstPh.Size = New System.Drawing.Size(56, 20)
         Me.lblstPh.TabIndex = 4
         Me.lblstPh.Text = "Phone"
         '
@@ -111,38 +116,43 @@ Partial Class empForm
         '
         Me.lblDob.AutoSize = True
         Me.lblDob.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDob.Location = New System.Drawing.Point(492, 146)
+        Me.lblDob.Location = New System.Drawing.Point(656, 180)
+        Me.lblDob.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDob.Name = "lblDob"
-        Me.lblDob.Size = New System.Drawing.Size(82, 16)
+        Me.lblDob.Size = New System.Drawing.Size(110, 20)
         Me.lblDob.TabIndex = 5
         Me.lblDob.Text = "Birth of Date "
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(127, 67)
+        Me.txtID.Location = New System.Drawing.Point(169, 82)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(250, 20)
+        Me.txtID.Size = New System.Drawing.Size(332, 22)
         Me.txtID.TabIndex = 6
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(127, 105)
+        Me.txtName.Location = New System.Drawing.Point(169, 129)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(250, 20)
+        Me.txtName.Size = New System.Drawing.Size(332, 22)
         Me.txtName.TabIndex = 7
         '
         'txtPh
         '
-        Me.txtPh.Location = New System.Drawing.Point(127, 146)
+        Me.txtPh.Location = New System.Drawing.Point(169, 180)
+        Me.txtPh.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPh.Name = "txtPh"
-        Me.txtPh.Size = New System.Drawing.Size(250, 20)
+        Me.txtPh.Size = New System.Drawing.Size(332, 22)
         Me.txtPh.TabIndex = 8
         '
         'dtpDob
         '
-        Me.dtpDob.Location = New System.Drawing.Point(578, 142)
+        Me.dtpDob.Location = New System.Drawing.Point(771, 175)
+        Me.dtpDob.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpDob.Name = "dtpDob"
-        Me.dtpDob.Size = New System.Drawing.Size(250, 20)
+        Me.dtpDob.Size = New System.Drawing.Size(332, 22)
         Me.dtpDob.TabIndex = 9
         '
         'Panel1
@@ -152,26 +162,29 @@ Partial Class empForm
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(884, 44)
+        Me.Panel1.Size = New System.Drawing.Size(1179, 54)
         Me.Panel1.TabIndex = 12
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(851, 9)
+        Me.Label4.Location = New System.Drawing.Point(1135, 11)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(27, 28)
+        Me.Label4.Size = New System.Drawing.Size(34, 36)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "X"
         '
         'btnClear
         '
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(41, 220)
+        Me.btnClear.Location = New System.Drawing.Point(55, 271)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(91, 33)
+        Me.btnClear.Size = New System.Drawing.Size(121, 41)
         Me.btnClear.TabIndex = 13
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
@@ -179,9 +192,10 @@ Partial Class empForm
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(458, 220)
+        Me.btnDelete.Location = New System.Drawing.Point(611, 271)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(91, 33)
+        Me.btnDelete.Size = New System.Drawing.Size(121, 41)
         Me.btnDelete.TabIndex = 14
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -189,9 +203,10 @@ Partial Class empForm
         'btnEdit
         '
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(605, 220)
+        Me.btnEdit.Location = New System.Drawing.Point(807, 271)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(91, 33)
+        Me.btnEdit.Size = New System.Drawing.Size(121, 41)
         Me.btnEdit.TabIndex = 15
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -200,49 +215,54 @@ Partial Class empForm
         '
         Me.btnAdd.BackColor = System.Drawing.Color.Silver
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(746, 220)
+        Me.btnAdd.Location = New System.Drawing.Point(995, 271)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(91, 33)
+        Me.btnAdd.Size = New System.Drawing.Size(121, 41)
         Me.btnAdd.TabIndex = 16
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
-        'rdoMen
+        'rdoMale
         '
-        Me.rdoMen.AutoSize = True
-        Me.rdoMen.Location = New System.Drawing.Point(609, 185)
-        Me.rdoMen.Name = "rdoMen"
-        Me.rdoMen.Size = New System.Drawing.Size(46, 17)
-        Me.rdoMen.TabIndex = 17
-        Me.rdoMen.TabStop = True
-        Me.rdoMen.Text = "Men"
-        Me.rdoMen.UseVisualStyleBackColor = True
+        Me.rdoMale.AutoSize = True
+        Me.rdoMale.Location = New System.Drawing.Point(812, 228)
+        Me.rdoMale.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rdoMale.Name = "rdoMale"
+        Me.rdoMale.Size = New System.Drawing.Size(58, 20)
+        Me.rdoMale.TabIndex = 17
+        Me.rdoMale.TabStop = True
+        Me.rdoMale.Text = "Male"
+        Me.rdoMale.UseVisualStyleBackColor = True
         '
-        'rdoWomen
+        'rdoFemale
         '
-        Me.rdoWomen.AutoSize = True
-        Me.rdoWomen.Location = New System.Drawing.Point(688, 185)
-        Me.rdoWomen.Name = "rdoWomen"
-        Me.rdoWomen.Size = New System.Drawing.Size(62, 17)
-        Me.rdoWomen.TabIndex = 18
-        Me.rdoWomen.TabStop = True
-        Me.rdoWomen.Text = "Women"
-        Me.rdoWomen.UseVisualStyleBackColor = True
+        Me.rdoFemale.AutoSize = True
+        Me.rdoFemale.Location = New System.Drawing.Point(917, 228)
+        Me.rdoFemale.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rdoFemale.Name = "rdoFemale"
+        Me.rdoFemale.Size = New System.Drawing.Size(74, 20)
+        Me.rdoFemale.TabIndex = 18
+        Me.rdoFemale.TabStop = True
+        Me.rdoFemale.Text = "Female"
+        Me.rdoFemale.UseVisualStyleBackColor = True
         '
         'txtSa
         '
-        Me.txtSa.Location = New System.Drawing.Point(578, 105)
+        Me.txtSa.Location = New System.Drawing.Point(771, 129)
+        Me.txtSa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSa.Name = "txtSa"
-        Me.txtSa.Size = New System.Drawing.Size(250, 20)
+        Me.txtSa.Size = New System.Drawing.Size(332, 22)
         Me.txtSa.TabIndex = 20
         '
         'lblSa
         '
         Me.lblSa.AutoSize = True
         Me.lblSa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSa.Location = New System.Drawing.Point(526, 105)
+        Me.lblSa.Location = New System.Drawing.Point(701, 129)
+        Me.lblSa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSa.Name = "lblSa"
-        Me.lblSa.Size = New System.Drawing.Size(46, 16)
+        Me.lblSa.Size = New System.Drawing.Size(56, 20)
         Me.lblSa.TabIndex = 19
         Me.lblSa.Text = "Salary"
         '
@@ -252,33 +272,19 @@ Partial Class empForm
         Me.dgvEmp.AllowUserToDeleteRows = False
         Me.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.no, Me.emp_name, Me.emp_position, Me.salary, Me.emp_dob, Me.emp_gender, Me.emp_phone, Me.create_at})
-        Me.dgvEmp.Location = New System.Drawing.Point(0, 275)
+        Me.dgvEmp.Location = New System.Drawing.Point(0, 338)
+        Me.dgvEmp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvEmp.Name = "dgvEmp"
         Me.dgvEmp.ReadOnly = True
         Me.dgvEmp.RowHeadersVisible = False
-        Me.dgvEmp.Size = New System.Drawing.Size(884, 255)
+        Me.dgvEmp.RowHeadersWidth = 51
+        Me.dgvEmp.Size = New System.Drawing.Size(1179, 314)
         Me.dgvEmp.TabIndex = 21
-        '
-        'txtPosition
-        '
-        Me.txtPosition.Location = New System.Drawing.Point(578, 67)
-        Me.txtPosition.Name = "txtPosition"
-        Me.txtPosition.Size = New System.Drawing.Size(250, 20)
-        Me.txtPosition.TabIndex = 23
-        '
-        'lblPosition
-        '
-        Me.lblPosition.AutoSize = True
-        Me.lblPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPosition.Location = New System.Drawing.Point(517, 68)
-        Me.lblPosition.Name = "lblPosition"
-        Me.lblPosition.Size = New System.Drawing.Size(55, 16)
-        Me.lblPosition.TabIndex = 22
-        Me.lblPosition.Text = "Position"
         '
         'no
         '
         Me.no.HeaderText = "No."
+        Me.no.MinimumWidth = 6
         Me.no.Name = "no"
         Me.no.ReadOnly = True
         Me.no.Width = 50
@@ -287,6 +293,7 @@ Partial Class empForm
         '
         Me.emp_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.emp_name.HeaderText = "Full Name"
+        Me.emp_name.MinimumWidth = 6
         Me.emp_name.Name = "emp_name"
         Me.emp_name.ReadOnly = True
         '
@@ -294,24 +301,30 @@ Partial Class empForm
         '
         Me.emp_position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.emp_position.HeaderText = "Position"
+        Me.emp_position.MinimumWidth = 6
         Me.emp_position.Name = "emp_position"
         Me.emp_position.ReadOnly = True
         '
         'salary
         '
         Me.salary.HeaderText = "Salary"
+        Me.salary.MinimumWidth = 6
         Me.salary.Name = "salary"
         Me.salary.ReadOnly = True
+        Me.salary.Width = 125
         '
         'emp_dob
         '
         Me.emp_dob.HeaderText = "Date Of birth"
+        Me.emp_dob.MinimumWidth = 6
         Me.emp_dob.Name = "emp_dob"
         Me.emp_dob.ReadOnly = True
+        Me.emp_dob.Width = 125
         '
         'emp_gender
         '
         Me.emp_gender.HeaderText = "Gender"
+        Me.emp_gender.MinimumWidth = 6
         Me.emp_gender.Name = "emp_gender"
         Me.emp_gender.ReadOnly = True
         Me.emp_gender.Width = 80
@@ -319,28 +332,51 @@ Partial Class empForm
         'emp_phone
         '
         Me.emp_phone.HeaderText = "Phone"
+        Me.emp_phone.MinimumWidth = 6
         Me.emp_phone.Name = "emp_phone"
         Me.emp_phone.ReadOnly = True
+        Me.emp_phone.Width = 125
         '
         'create_at
         '
         Me.create_at.HeaderText = "Create at"
+        Me.create_at.MinimumWidth = 6
         Me.create_at.Name = "create_at"
         Me.create_at.ReadOnly = True
+        Me.create_at.Width = 125
+        '
+        'txtPosition
+        '
+        Me.txtPosition.Location = New System.Drawing.Point(771, 82)
+        Me.txtPosition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPosition.Name = "txtPosition"
+        Me.txtPosition.Size = New System.Drawing.Size(332, 22)
+        Me.txtPosition.TabIndex = 23
+        '
+        'lblPosition
+        '
+        Me.lblPosition.AutoSize = True
+        Me.lblPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPosition.Location = New System.Drawing.Point(689, 84)
+        Me.lblPosition.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPosition.Name = "lblPosition"
+        Me.lblPosition.Size = New System.Drawing.Size(69, 20)
+        Me.lblPosition.TabIndex = 22
+        Me.lblPosition.Text = "Position"
         '
         'empForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(884, 530)
+        Me.ClientSize = New System.Drawing.Size(1179, 652)
         Me.Controls.Add(Me.txtPosition)
         Me.Controls.Add(Me.lblPosition)
         Me.Controls.Add(Me.dgvEmp)
         Me.Controls.Add(Me.txtSa)
         Me.Controls.Add(Me.lblSa)
-        Me.Controls.Add(Me.rdoWomen)
-        Me.Controls.Add(Me.rdoMen)
+        Me.Controls.Add(Me.rdoFemale)
+        Me.Controls.Add(Me.rdoMale)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnDelete)
@@ -356,6 +392,7 @@ Partial Class empForm
         Me.Controls.Add(Me.lblstName)
         Me.Controls.Add(Me.lblstID)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "empForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Menagement"
@@ -383,8 +420,8 @@ Partial Class empForm
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnAdd As Button
-    Friend WithEvents rdoMen As RadioButton
-    Friend WithEvents rdoWomen As RadioButton
+    Friend WithEvents rdoMale As RadioButton
+    Friend WithEvents rdoFemale As RadioButton
     Friend WithEvents txtSa As TextBox
     Friend WithEvents lblSa As Label
     Friend WithEvents dgvEmp As DataGridView

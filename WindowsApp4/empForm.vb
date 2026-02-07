@@ -18,31 +18,32 @@ Public Class empForm
             Using reader As MySqlDataReader = cmd.ExecuteReader()
                 Dim i As Integer = 1
                 While reader.Read()
-                    ' Format DOB
-
                     dgvEmp.Rows.Add(
-                    i,                          ' Column 0: No
-                    reader("emp_name"),         ' Column 1
-                    reader("emp_position"),     ' Column 2
-                   Format(reader("salary"), "N2"),           ' Column 5
-                   Format(reader("emp_dob"), "yyyy-mm-dd"),          ' Column 3
-                    reader("emp_gender"),       ' Column 4
-                    reader("emp_phone"),        ' Column 6
-                   reader("create_at")        ' Column 7
-)
+                    i,
+                    reader("emp_name"),
+                    reader("emp_position"),
+                    Format(reader("salary"), "N2"),
+                    Format(reader("emp_dob"), "yyyy-MM-dd"),
+                    reader("emp_gender"),
+                    reader("emp_phone"),
+                    reader("create_at")
+                )
                     i += 1
+                    dgvEmp.Rows(dgvEmp.Rows.Count - 1).Tag = reader("emp_id")
                 End While
+
             End Using
         End Using
     End Sub
+
     Sub ClearInputs()
         txtID.Clear()
         txtName.Clear()
         txtPosition.Clear()
         txtSa.Clear()
         txtPh.Clear()
-        rdoMen.Checked = False
-        rdoWomen.Checked = False
+        rdoMale.Checked = False
+        rdoFemale.Checked = False
         dtpDob.Value = Date.Today
     End Sub
 
@@ -60,10 +61,10 @@ Public Class empForm
         End If
         Try
             Dim gender As String = ""
-            If rdoMen.Checked Then
-                gender = "Men"
-            ElseIf rdoWomen.Checked Then
-                gender = "Women"
+            If rdoMale.Checked Then
+                gender = "Male"
+            ElseIf rdoFemale.Checked Then
+                gender = "Female"
             Else
                 MessageBox.Show(" Please Select Gender")
                 Exit Sub
@@ -88,9 +89,6 @@ Public Class empForm
             End Using
 
             MessageBox.Show(" Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            MessageBox.Show(" Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            MessageBox.Show(" Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             dgvEmp.Rows.Clear()
             loadEmpData()
             ClearInputs()
@@ -101,5 +99,81 @@ Public Class empForm
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ClearInputs()
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        ' Validation
+        If String.IsNullOrEmpty(txtID.Text) Or String.IsNullOrEmpty(txtName.Text) Then
+            MsgBox("Please select an employee to update.")
+            Exit Sub
+        End If
+
+        If rdoMale.Checked = False And rdoFemale.Checked = False Then
+            MsgBox("Please select gender")
+            Exit Sub
+        End If
+        ' Assign gender
+        Dim gender As String = If(rdoMale.Checked, "Male", "Female")
+
+        ' Validate salary
+        Dim salary As Decimal
+        If Not Decimal.TryParse(txtSa.Text.Trim(), salary) Then
+            MsgBox("Invalid salary format.")
+            Exit Sub
+        End If
+
+        Try
+            Using conn As MySqlConnection = getDBConnection()
+                conn.Open()
+                Dim updateQuery As String = "UPDATE tblemployee SET emp_name=@name, emp_position=@position, salary=@salary, emp_dob=@dob, emp_gender=@gender, emp_phone=@phone WHERE emp_id=@id"
+                Using cmd As New MySqlCommand(updateQuery, conn)
+
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtID.Text))
+                    cmd.Parameters.AddWithValue("@name", txtName.Text.Trim())
+                    cmd.Parameters.AddWithValue("@position", txtPosition.Text.Trim())
+                    cmd.Parameters.AddWithValue("@salary", salary)
+                    cmd.Parameters.AddWithValue("@dob", dtpDob.Value.ToString("yyyy-MM-dd"))
+                    cmd.Parameters.AddWithValue("@gender", gender)
+                    cmd.Parameters.AddWithValue("@phone", txtPh.Text.Trim())
+
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+
+            MessageBox.Show("Employee updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            loadEmpData()
+            ClearInputs()
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub dgvEmp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmp.CellClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgvEmp.Rows(e.RowIndex)
+
+
+
+            txtID.Text = row.Tag.ToString()
+
+            ' Fill textboxes
+            txtName.Text = row.Cells("emp_name").Value.ToString()
+            txtPosition.Text = row.Cells("emp_position").Value.ToString()
+            txtSa.Text = row.Cells("salary").Value.ToString()
+            txtPh.Text = row.Cells("emp_phone").Value.ToString()
+            dtpDob.Value = Convert.ToDateTime(row.Cells("emp_dob").Value)
+
+            If row.Cells("emp_gender").Value.ToString() = "Male" Then
+                rdoMale.Checked = True
+            Else
+                rdoFemale.Checked = True
+            End If
+        End If
+    End Sub
+
+    Private Sub rdoMen_CheckedChanged(sender As Object, e As EventArgs) Handles rdoMale.CheckedChanged
+
     End Sub
 End Class
