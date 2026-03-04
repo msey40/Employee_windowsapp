@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.WindowsApp4.dashboard
+            Me.MainForm = Global.WindowsApp4.frmTest
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
